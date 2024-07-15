@@ -39,17 +39,26 @@ function salida() {
   let minutos = horarioDeSalida % 100;
 
   fechaActual.setHours(hora, minutos);
-
-  if (horarioDeSalida < 1500 || horarioDeSalida >= 1600) {
-    alert('El horario de salida debe ser entre las 15:00 y antes de las 16:00');
-  } else if (typeof valor === 'number' && !isNaN(valor)) {
+  if (typeof horarioDeSalida !== 'number' || isNaN(horarioDeSalida)) {
     alert('El horario de salida debe ser un número');
+  } else if (horarioDeSalida < 1500 || horarioDeSalida >= 1600) {
+    alert('El horario de salida debe ser entre las 15:00 y antes de las 16:00');
   } else {
     let mensaje = `Salida ingresada con éxito para el ${dia}/${mes}/${anio} a las ${hora}:${minutos
       .toString()
       .padStart(2, '0')}`;
     alert(mensaje);
   }
+  // if (horarioDeSalida < 1500 || horarioDeSalida >= 1600) {
+  //   alert('El horario de salida debe ser entre las 15:00 y antes de las 16:00');
+  // } else if (typeof valor === 'number' && !isNaN(valor)) {
+  //   alert('El horario de salida debe ser un número');
+  // } else {
+  //   let mensaje = `Salida ingresada con éxito para el ${dia}/${mes}/${anio} a las ${hora}:${minutos
+  //     .toString()
+  //     .padStart(2, '0')}`;
+  //   alert(mensaje);
+  // }
   // alert(horarioDeSalida);
 
   alert(salida);
